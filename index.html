@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Love ❤️</title>
+
+<style>
+* {box-sizing:border-box;}
+
+body {
+ margin:0;
+ background:linear-gradient(160deg,#ffe4ec,#f5c4d8,#eadcf5);
+ font-family:Georgia,serif;
+ color:#853d61;
+ text-align:center;
+ overflow-x:hidden;
+}
+
+.container {
+ padding:45px 18px;
+ max-width:650px;
+ margin:auto;
+}
+
+h1 {
+ font-size:36px;
+ color:#c02e69;
+ line-height:1.4;
+}
+
+.subtitle {
+ font-size:18px;
+ font-style:italic;
+ line-height:1.8;
+}
+
+.heart {
+ font-size:55px;
+ animation:pulse 1.5s infinite;
+ margin:20px;
+}
+
+@keyframes pulse {
+ 50% {transform:scale(1.2);}
+}
+
+.envelope {
+ font-size:90px;
+ margin:25px;
+ cursor:pointer;
+}
+
+button {
+ background:#c43f78;
+ color:white;
+ border:0;
+ padding:15px 25px;
+ border-radius:30px;
+ font-size:17px;
+ margin:15px;
+ cursor:pointer;
+}
+
+.letter {
+ display:none;
+ background:#fffafc;
+ border-radius:20px;
+ padding:28px 22px;
+ margin-top:25px;
+ box-shadow:0 5px 25px #a54a7040;
+ font-size:18px;
+ line-height:2;
+ text-align:left;
+ animation:fade 1s;
+}
+
+.letter h2 {
+ text-align:center;
+ color:#c02e69;
+}
+
+.photo {
+ background:white;
+ padding:12px 12px 30px;
+ max-width:300px;
+ margin:30px auto;
+ transform:rotate(-3deg);
+ box-shadow:0 5px 20px #aa557555;
+}
+
+.photo img {
+ width:100%;
+ height:300px;
+ object-fit:cover;
+}
+
+.photo p {
+ font-style:italic;
+ font-size:17px;
+}
+
+.final {
+ display:none;
+ font-size:21px;
+ line-height:2;
+ background:#fff5fa;
+ padding:25px;
+ border-radius:20px;
+ margin-top:25px;
+}
+
+.floating {
+ position:fixed;
+ bottom:-30px;
+ animation:float 7s linear forwards;
+ pointer-events:none;
+ z-index:-1;
+}
+
+@keyframes float {
+ to {
+  transform:translateY(-110vh) rotate(360deg);
+  opacity:0;
+ }
+}
+
+@keyframes fade {
+ from {opacity:0;transform:translateY(20px);}
+ to {opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Birthday, My Love ❤️</h1>
+
+<p class="subtitle">
+Today is all about you...
+and I have something special for you.
+</p>
+
+<div class="heart">❤️</div>
+
+<p>Some feelings are too beautiful to be expressed in words...</p>
+
+<div class="envelope" onclick="openLetter()">💌</div>
+
+<p>Tap the letter to open your surprise</p>
+
+<button onclick="openLetter()">Open My Love Letter 💗</button>
+
+<div class="letter" id="letter">
+
+<h2>To My Favourite Person 🌹</h2>
+
+<p>My dearest,</p>
+
+<p>
+Happy Birthday to the person who holds such a special place in my heart.
+I may not always find the perfect words to express my feelings,
+but I hope you know how much you mean to me.
+</p>
+
+<p>
+You make ordinary days feel special.
+Your smile brings happiness, your presence brings comfort,
+and even the smallest moments with you become beautiful memories.
+</p>
+
+<p>
+On your birthday, I wish you endless happiness,
+success in everything you do, good health,
+and peace in every chapter of your life.
+</p>
+
+<p>
+May Allah protect you, guide your steps,
+accept your duas, and bless you with everything
+your heart quietly wishes for. Ameen. 🤍
+</p>
+
+<p>
+If I could wish for one thing,
+it would be to see you happy every single day.
+</p>
+
+<p>
+You are a beautiful part of my story,
+and I hope we create many more memories together.
+</p>
+
+<p style="text-align:center;">
+With all my love ❤️<br>
+Yours, always. 🌷
+</p>
+
+</div>
+
+<br><br>
+
+<h1>One Beautiful Memory 📸</h1>
+
+<p class="subtitle">
+A picture, a thousand feelings.
+</p>
+
+<div class="photo">
+
+<img
+src="https://i.postimg.cc/15z0WjNf/Whats-App-Image-2026-10-24-at-7-31-34-PM.jpg"
+alt="Our special memory">
+
+<p>My favourite memory ❤️</p>
+
+</div>
+
+<button onclick="finalSurprise()">One Last Surprise ✨tap to open</button>
+
+<div class="final" id="final">
+
+🌹 You are my favourite person,
+my sweetest thought,
+and one of life's most beautiful blessings.
+
+<br><br>
+
+May every birthday bring you closer
+to all your dreams.
+
+<br><br>
+
+HAPPY BIRTHDAY, MY LOVE! ❤️
+
+<br><br>
+
+Forever & Always 💌
+
+</div>
+
+</div>
+
+<script>
+
+function openLetter() {
+ document.getElementById("letter").style.display="block";
+ document.getElementById("letter").scrollIntoView({
+  behavior:"smooth"
+ });
+}
+
+function finalSurprise() {
+ document.getElementById("final").style.display="block";
+ document.getElementById("final").scrollIntoView({
+  behavior:"smooth"
+ });
+}
+
+function makeHeart() {
+ let h=document.createElement("div");
+ h.className="floating";
+ h.innerHTML=["❤️","💕","💗","🌹","✨"][
+ Math.floor(Math.random()*5)
+ ];
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(20+Math.random()*20)+"px";
+ h.style.animationDuration=(4+Math.random()*4)+"s";
+
+ document.body.appendChild(h);
+
+ setTimeout(()=>h.remove(),8000);
+}
+
+setInterval(makeHeart,500);
+
+</script>
+<div class="final-surprise">
+  <button onclick="showLove()">
+    Here's the one you always asked for ❤️ make a single tap and scroll
+  </button>
+
+  <div id="loveMessage" class="love-message">
+    <div class="big-heart">❤️</div>
+    <h1>I LOVE YOU</h1>
+    <p>More than words can ever say. 💗</p>
+  </div>
+</div>
+
+<style>
+.final-surprise {
+  text-align: center;
+  padding: 35px 15px;
+}
+
+.final-surprise button {
+  background: #ff6b9d;
+  color: white;
+  border: none;
+  padding: 15px 22px;
+  border-radius: 25px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.love-message {
+  display: none;
+  margin-top: 25px;
+  animation: pop 0.7s ease;
+  color: #e75480;
+}
+
+.love-message.show {
+  display: block;
+}
+
+.big-heart {
+  font-size: 85px;
+  animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.25); }
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<script>
+function showLove() {
+  document.getElementById("loveMessage").classList.add("show");
+}
+</script>
+
+</body>
+</html>
